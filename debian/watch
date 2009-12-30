@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/[+.]debian(.?\d+)?$//" \
+  http://code.google.com/p/flot/ \
+    http://flot.googlecode.com/files/flot-(.*).tar.gz
