@@ -1,3 +1,19 @@
+flot (0.6+debian-1) unstable; urgency=low
+
+  * New Upstream Release (Closes: #572494)
+    - Created debian/libjs-flot.links
+    - Removed TODO from debian/libjs-flot.docs
+    - Added PLUGINS.txt in libjs-flot.docs
+    - Added FAQ.txt in libjs-flot.docs
+  * Added watch file
+  * Updated Standards-Version to 3.8.4 (no changes)
+  * Removed DM-Upload-Allowed field
+  * Changing my email for Debian address
+  * Generating compressed files from source (Closes: #571784)
+    - Created README.Source
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Sat, 06 Mar 2010 17:27:04 -0300
+
 flot (0.5-1) unstable; urgency=low
 
   * Initial release (Closes: #503989)
