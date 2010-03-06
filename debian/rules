@@ -1,3 +1,11 @@
 #!/usr/bin/make -f
 %:
 	dh $@
+
+override_dh_auto_build:
+	for file in `ls *.js`; do \
+		`yui-compressor $$file -o $${file%.js}.min.js`; \
+	done
+
+override_dh_auto_clean:
+	rm -f *.min.js
