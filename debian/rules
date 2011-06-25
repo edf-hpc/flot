@@ -9,3 +9,28 @@ override_dh_auto_build:
 
 override_dh_auto_clean:
 	rm -f *.min.js
+
+get-orig-source:
+	OUTDIR=$$PWD ; \
+	MAKEFILE=`echo $(MAKEFILE_LIST) | awk '{ print $$1 }'` ; \
+	FILE=`readlink -f $$MAKEFILE` ; \
+	DIR=`dirname $$FILE` ; \
+	cd $$DIR/.. ; \
+	TMP=`mktemp -d` ; \
+	if ! USCAN=`uscan --destdir $$TMP` ; then exit 1 ; fi ; \
+	VERSION=`echo $$USCAN | sed -n 's/.*Newer version (\(.*\)) available.*/\1/p'` ; \
+	cd $$TMP ; \
+	tar xzf flot-$$VERSION.tar.gz ; \
+	mv flot flot-$$VERSION; \
+	cd flot-$$VERSION; \
+	rm -f Makefile ; \
+	rm -f *.min.js  ; \
+	rm -f jquery.js ; \
+	rm -f excanvas.js ; \
+	cd .. ; \
+	tar c flot-$$VERSION | gzip -9 > flot_$$VERSION+dfsg.orig.tar.gz ; \
+	rm -rf flot-$$VERSION ; \
+	mv flot_$$VERSION+dfsg.orig.tar.gz $$OUTDIR ; \
+	cd $$OUTDIR ; \
+	rm -rf $$TMP ; \
+	echo Saved file at flot_$$VERSION+dfsg.orig.tar.gz
