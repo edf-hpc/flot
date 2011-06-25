@@ -1,3 +1,13 @@
+flot (0.7+dfsg-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Create get-orig-source rule to remove some files from source.
+  * Changing README.Debian to skip loading excanvas in IE 9.
+  * Updated Standards-Version to 3.9.2 (no changes).
+  * Changing mangle version from 'debian' to 'dfsg'.
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Sat, 25 Jun 2011 17:36:34 -0300
+
 flot (0.6+debian-2) unstable; urgency=low
 
   * Fixed watch file
