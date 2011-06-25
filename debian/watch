@@ -1,6 +1,6 @@
 version=3
 opts=\
-dversionmangle=s/[+.]debian(.?\d+)?$//,\
+dversionmangle=s/[+.]dfsg(.?\d+)?$//,\
 downloadurlmangle=s|.*[?]name=(.*?)&.*|http://flot.googlecode.com/files/$1|,\
 filenamemangle=s|[^/]+[?]name=(.*?)&.*|$1| \
 http://code.google.com/p/flot/downloads/detail[?]name=flot-(.*).tar.gz&.*
