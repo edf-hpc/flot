@@ -1,3 +1,9 @@
+flot (0.7+dfsg-2) unstable; urgency=high
+
+  * Rebuilding package to fix broken minified files
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Wed, 18 Jan 2012 14:32:34 -0200
+
 flot (0.7+dfsg-1) unstable; urgency=low
 
   * New Upstream Release.
