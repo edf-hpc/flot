@@ -11,8 +11,8 @@ Vcs-Git: git://git.debian.org/git/pkg-javascript/flot.git
 
 Package: libjs-flot
 Architecture: all
-Depends: ${misc:Depends}, libjs-jquery, libjs-excanvas
-Recommends: javascript-common
+Depends: ${misc:Depends}, libjs-jquery
+Recommends: javascript-common, libjs-excanvas
 Description: plotting library for jQuery
  Flot is a pure Javascript plotting library for jQuery.
  It produces graphical plots of arbitrary datasets
