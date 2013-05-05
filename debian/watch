@@ -1,6 +1,4 @@
 version=3
-opts=\
-dversionmangle=s/[+.]dfsg(.?\d+)?$//,\
-downloadurlmangle=s|.*[?]name=(.*?)&.*|http://flot.googlecode.com/files/$1|,\
-filenamemangle=s|[^/]+[?]name=(.*?)&.*|$1| \
-http://code.google.com/p/flot/downloads/detail[?]name=flot-(.*).tar.gz&.*
+opts="dversionmangle=s/\+(debian|dfsg|ds|deb)\d*$//,\
+filenamemangle=s/.+\/v?(.*)\.tar\.gz/flot-$1.tar.gz/" \
+ https://github.com/flot/flot/tags .*/v?(\d[\d\.]+)\.tar\.gz
