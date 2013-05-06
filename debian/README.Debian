@@ -1,4 +1,4 @@
-libjs-flot for Debian
+libjs-jquery-flot for Debian
 ------------------------
 
 In order to make use of flot in your html, include the following
@@ -8,7 +8,7 @@ lines in your html header:
        src="/javascript/jquery/jquery.js"></script>
 
        <script language="javascript" type="text/javascript"
-       src="/javascript/flot/jquery.flot.js"></script>
+       src="/javascript/jquery-flot/jquery.flot.js"></script>
 
 If you have installed libjs-excanvas, include the following lines in your
 html header:
