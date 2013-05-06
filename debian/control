@@ -16,7 +16,7 @@ Replaces: libjs-flot (<< 0.8.1-1~)
 Breaks: libjs-flot (<< 0.8.1-1~)
 Recommends: javascript-common, libjs-excanvas
 Description: plotting library for jQuery
- Flot is a pure Javascript plotting library for jQuery.
+ Flot is a pure JavaScript plotting library for jQuery.
  It produces graphical plots of arbitrary datasets
  on-the-fly client-side. The focus is on simple usage (all
  settings are optional), attractive looks and interactive
