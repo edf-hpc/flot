@@ -1,0 +1,529 @@
+Index: flot/examples/ajax/index.html
+===================================================================
+--- flot.orig/examples/ajax/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/ajax/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: AJAX</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/annotating/index.html
+===================================================================
+--- flot.orig/examples/annotating/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/annotating/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Adding Annotations</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/axes-interacting/index.html
+===================================================================
+--- flot.orig/examples/axes-interacting/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/axes-interacting/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Interacting with axes</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/axes-multiple/index.html
+===================================================================
+--- flot.orig/examples/axes-multiple/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/axes-multiple/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Multiple Axes</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.time.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.time.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/axes-time-zones/index.html
+===================================================================
+--- flot.orig/examples/axes-time-zones/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/axes-time-zones/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Time zones</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.time.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.time.js"></script>
+ 	<script language="javascript" type="text/javascript" src="date.js"></script>
+ 	<script type="text/javascript">
+ 
+Index: flot/examples/axes-time/index.html
+===================================================================
+--- flot.orig/examples/axes-time/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/axes-time/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Time Axes</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.time.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.time.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/basic-options/index.html
+===================================================================
+--- flot.orig/examples/basic-options/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/basic-options/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Basic Options</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function () {
+Index: flot/examples/basic-usage/index.html
+===================================================================
+--- flot.orig/examples/basic-usage/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/basic-usage/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Basic Usage</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/canvas/index.html
+===================================================================
+--- flot.orig/examples/canvas/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/canvas/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,11 +4,11 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Canvas text</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.time.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.canvas.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.time.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.canvas.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/categories/index.html
+===================================================================
+--- flot.orig/examples/categories/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/categories/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Categories</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.categories.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.categories.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/image/index.html
+===================================================================
+--- flot.orig/examples/image/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/image/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Image Plots</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.image.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.image.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/index.html
+===================================================================
+--- flot.orig/examples/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -12,8 +12,8 @@
+ 	}
+ 
+ 	</style>
+-	<script language="javascript" type="text/javascript" src="../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/interacting/index.html
+===================================================================
+--- flot.orig/examples/interacting/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/interacting/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Interactivity</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/navigate/index.html
+===================================================================
+--- flot.orig/examples/navigate/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/navigate/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -23,10 +23,10 @@
+ 	}
+ 
+ 	</style>
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.navigate.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.navigate.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/percentiles/index.html
+===================================================================
+--- flot.orig/examples/percentiles/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/percentiles/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Percentiles</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.fillbetween.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.fillbetween.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/realtime/index.html
+===================================================================
+--- flot.orig/examples/realtime/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/realtime/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Real-time updates</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/resize/index.html
+===================================================================
+--- flot.orig/examples/resize/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/resize/index.html	2013-05-29 12:48:42.000000000 -0300
+@@ -4,12 +4,12 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Resizing</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<link href="../shared/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../shared/jquery-ui/jquery-ui.min.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.resize.js"></script>
++	<link href="/usr/share/javascript/jquery-ui/css/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css">
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-ui/jquery-ui.min.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.resize.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/selection/index.html
+===================================================================
+--- flot.orig/examples/selection/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/selection/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Selection</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.selection.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.selection.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/series-errorbars/index.html
+===================================================================
+--- flot.orig/examples/series-errorbars/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/series-errorbars/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,11 +4,11 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Error Bars</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.errorbars.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.navigate.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.errorbars.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.navigate.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/series-pie/index.html
+===================================================================
+--- flot.orig/examples/series-pie/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/series-pie/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -75,10 +75,10 @@
+ 	}
+ 
+ 	</style>
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.pie.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.pie.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+@@ -787,7 +787,7 @@
+ 			<li>The legend now works without any modifications! Because of changes made to flot and the plugin system (thanks Ole Laursen!) I was able to simplify a number of things and am now able to use the legend without the direct access hack that was required in the previous version.</li>
+ 			<br/>
+ 			<li style="list-style: none;"><i>v0.2 - June 22nd, 2009 - Brian Medendorp</i></li>
+-			<li>The legend now works but only if you make the necessary changes to jquery.flot.js. Because of this, I changed the default values for pie.radius and pie.label.show to new 'auto' settings that change the default behavior of the size and labels depending on whether the legend functionality is available or not.</li>
++			<li>The legend now works but only if you make the necessary changes to /usr/share/javascript/jquery-flot/jquery.flot.js. Because of this, I changed the default values for pie.radius and pie.label.show to new 'auto' settings that change the default behavior of the size and labels depending on whether the legend functionality is available or not.</li>
+ 			<br/>
+ 			<li style="list-style: none;"><i>v0.1 - June 18th, 2009 - Brian Medendorp</i></li>
+ 			<li>Rewrote the entire pie code into a flot plugin (since that is now an option), so it should be much easier to use and the code is cleaned up a bit. However, the (standard flot) legend is no longer available because the only way to prevent the grid lines from being displayed also prevents the legend from being displayed. Hopefully this can be fixed at a later date.</li>
+Index: flot/examples/series-toggle/index.html
+===================================================================
+--- flot.orig/examples/series-toggle/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/series-toggle/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Toggling Series</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/series-types/index.html
+===================================================================
+--- flot.orig/examples/series-types/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/series-types/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,9 +4,9 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Series Types</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/stacking/index.html
+===================================================================
+--- flot.orig/examples/stacking/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/stacking/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Stacking</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.stack.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.stack.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/symbols/index.html
+===================================================================
+--- flot.orig/examples/symbols/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/symbols/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Symbols</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.symbol.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.symbol.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/threshold/index.html
+===================================================================
+--- flot.orig/examples/threshold/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/threshold/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Thresholds</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.threshold.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.threshold.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/tracking/index.html
+===================================================================
+--- flot.orig/examples/tracking/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/tracking/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Tracking</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.crosshair.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.crosshair.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/visitors/index.html
+===================================================================
+--- flot.orig/examples/visitors/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/visitors/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,11 +4,11 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Visitors</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.time.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.selection.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.time.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.selection.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {
+Index: flot/examples/zooming/index.html
+===================================================================
+--- flot.orig/examples/zooming/index.html	2013-05-29 12:46:39.000000000 -0300
++++ flot/examples/zooming/index.html	2013-05-29 12:46:39.000000000 -0300
+@@ -4,10 +4,10 @@
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 	<title>Flot Examples: Selection and zooming</title>
+ 	<link href="../examples.css" rel="stylesheet" type="text/css">
+-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+-	<script language="javascript" type="text/javascript" src="../../jquery.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script>
+-	<script language="javascript" type="text/javascript" src="../../jquery.flot.selection.js"></script>
++	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/usr/share/javascript/excanvas/excanvas.js"></script><![endif]-->
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery/jquery.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.js"></script>
++	<script language="javascript" type="text/javascript" src="/usr/share/javascript/jquery-flot/jquery.flot.selection.js"></script>
+ 	<script type="text/javascript">
+ 
+ 	$(function() {

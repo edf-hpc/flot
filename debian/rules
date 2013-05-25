@@ -28,6 +28,7 @@ get-orig-source:
 	rm -f excanvas.js ; \
 	rm -f .travis.yml ; \
 	rm -f .gitignore ; \
+	rm -rf examples/shared ; \
 	cd .. ; \
 	tar c flot-$$VERSION | gzip -9 > flot_$$VERSION+dfsg.orig.tar.gz ; \
 	rm -rf flot-$$VERSION ; \
