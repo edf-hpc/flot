@@ -21,12 +21,13 @@ get-orig-source:
 	VERSION=`echo $$USCAN | sed -n 's/.*Newer version (\(.*\)) available.*/\1/p'` ; \
 	cd $$TMP ; \
 	tar xzf flot-$$VERSION.tar.gz ; \
-	mv flot flot-$$VERSION; \
 	cd flot-$$VERSION; \
 	rm -f Makefile ; \
 	rm -f *.min.js  ; \
 	rm -f jquery.js ; \
 	rm -f excanvas.js ; \
+	rm -f .travis.yml ; \
+	rm -f .gitignore ; \
 	cd .. ; \
 	tar c flot-$$VERSION | gzip -9 > flot_$$VERSION+dfsg.orig.tar.gz ; \
 	rm -rf flot-$$VERSION ; \
