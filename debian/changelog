@@ -1,3 +1,25 @@
+flot (0.8.1+dfsg-1) unstable; urgency=low
+
+  * New upstream release (Closes: #705138).
+    + Updated watch file.
+    + Updated rules/get-orig-source.
+    + Updated docs file.
+    + Updated copyright file.
+  * Removed embedded code from:
+    + jquery.flot.js
+    + jquery.flot.resize.js
+    + jquery.flot.navigate.js
+  * Added NEWS.Debian
+  * Updated Standards-Version to 3.9.4 (no changes).
+  * Replaced yui-compressor with uglifyjs.
+  * Downgrading relation to libjs-excanvas from depends to recommends.
+  * Renaming binary package libjs-flot to
+    libjs-jquery-flot (Closes: #704860).
+  * Created binary package libjs-jquery-flot-docs.
+    + Fixed path for JS files in examples directory.
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Wed, 29 May 2013 17:36:22 -0300
+
 flot (0.7+dfsg-2) unstable; urgency=high
 
   * Rebuilding package to fix broken minified files
