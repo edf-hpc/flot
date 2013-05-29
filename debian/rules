@@ -11,6 +11,9 @@ override_dh_auto_build:
 	# jquery.flot.resize.js
 	cat /usr/share/javascript/jquery-resize/jquery.ba-resize.min.js > jquery.flot.resize.js
 	cat debian/jquery.flot.resize.js >> jquery.flot.resize.js
+	# jquery.flot.js
+	cat jquery.colorhelpers.js > jquery.flot.js
+	cat debian/jquery.flot.js >> jquery.flot.js
 	for file in `ls *.js`; do \
 		uglifyjs -o $${file%.js}.min.js $$file; \
 	done
@@ -19,6 +22,7 @@ override_dh_auto_clean:
 	rm -f *.min.js
 	rm -f jquery.flot.navigate.js
 	rm -f jquery.flot.resize.js
+	rm -f jquery.flot.js
 
 get-orig-source:
 	OUTDIR=$$PWD ; \
@@ -38,6 +42,7 @@ get-orig-source:
 	rm -f excanvas.js ; \
 	rm -f jquery.flot.navigate.js ; \
 	rm -f jquery.flot.resize.js ; \
+	rm -f jquery.flot.js ; \
 	rm -f .travis.yml ; \
 	rm -f .gitignore ; \
 	rm -rf examples/shared ; \
