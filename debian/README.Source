@@ -1,9 +1,4 @@
 All minified files (*.min.js) were removed from the upstream tarball,
 because these files are generated from source now.
 
-Also, the plugin jquery.flot.navigate.js was removed, because it
-contains obfuscated code. I will include it when the libs
-jquery.mousewheel and jquery.event.drag turn into a package.
-
-
- -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Sun, 07 Mar 2010 01:01:10 -0300
+ -- Marcelo Jorge Vieira  <metal@debian.org>  Wed, 29 May 2013 16:09:13 -0300

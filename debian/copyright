@@ -19,6 +19,18 @@ Files: debian/*
 Copyright: (c) 2009, Marcelo Jorge Vieira (metal) <metal@alucinados.com>
 License: MIT
 
+Files: debian/jquery.flot.js
+Copyright: 2007-2013 IOLA and Ole Laursen
+License: MIT
+
+Files: debian/jquery.flot.navigate.js
+Copyright: 2007-2013 IOLA and Ole Laursen
+License: MIT
+
+Files: debian/jquery.flot.resize.js
+Copyright: 2007-2013 IOLA and Ole Laursen
+License: MIT
+
 License: Apache-2.0
   On Debian GNU/Linux systems, the complete text of the Apache License
   can be found in `/usr/share/common-licenses/Apache-2.0'
