@@ -3,7 +3,8 @@ Section: web
 Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Marcelo Jorge Vieira (metal) <metal@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), node-uglify
+Build-Depends: debhelper (>= 7.0.50~), node-uglify, libjs-jquery-mousewheel,
+ libjs-jquery-event-drag
 Standards-Version: 3.9.4
 Homepage: http://code.google.com/p/flot/
 Vcs-Browser: http://git.debian.org/?p=pkg-javascript/flot.git

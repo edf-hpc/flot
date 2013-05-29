@@ -3,12 +3,18 @@
 	dh $@
 
 override_dh_auto_build:
+	# jquery.flot.navigate.js
+	cat debian/jquery.flot.navigate.header.js > jquery.flot.navigate.js
+	cat /usr/share/javascript/jquery-mousewheel/jquery.mousewheel.min.js >> jquery.flot.navigate.js
+	cat /usr/share/javascript/jquery-event-drag/jquery.event.drag.min.js >> jquery.flot.navigate.js
+	cat debian/jquery.flot.navigate.js >> jquery.flot.navigate.js
 	for file in `ls *.js`; do \
 		uglifyjs -o $${file%.js}.min.js $$file; \
 	done
 
 override_dh_auto_clean:
 	rm -f *.min.js
+	rm -f jquery.flot.navigate.js
 
 get-orig-source:
 	OUTDIR=$$PWD ; \
@@ -26,6 +32,7 @@ get-orig-source:
 	rm -f *.min.js  ; \
 	rm -f jquery.js ; \
 	rm -f excanvas.js ; \
+	rm -f jquery.flot.navigate.js ; \
 	rm -f .travis.yml ; \
 	rm -f .gitignore ; \
 	rm -rf examples/shared ; \
