@@ -1,3 +1,10 @@
+flot (0.8.1+dfsg-2) unstable; urgency=low
+
+  * Added compatibility symlink from /usr/share/javascript/flot
+    to /usr/share/javascript/jquery-flot (Closes: #710451)
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Fri, 31 May 2013 00:44:13 -0300
+
 flot (0.8.1+dfsg-1) unstable; urgency=low
 
   * New upstream release (Closes: #705138).
