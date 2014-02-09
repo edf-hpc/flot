@@ -1,4 +1,4 @@
-/* Javascript plotting library for jQuery, version 0.8.1.
+/* Javascript plotting library for jQuery, version 0.8.2.
 
 Copyright (c) 2007-2013 IOLA and Ole Laursen.
 Licensed under the MIT license.
@@ -399,7 +399,7 @@ Licensed under the MIT license.
 			element: positions.length ? info.element.clone() : info.element,
 			x: x,
 			y: y
-		}
+		};
 
 		positions.push(position);
 
@@ -632,6 +632,23 @@ Licensed under the MIT license.
             };
         };
         plot.shutdown = shutdown;
+        plot.destroy = function () {
+            shutdown();
+            placeholder.removeData("plot").empty();
+
+            series = [];
+            options = null;
+            surface = null;
+            overlay = null;
+            eventHolder = null;
+            ctx = null;
+            octx = null;
+            xaxes = [];
+            yaxes = [];
+            hooks = null;
+            highlights = [];
+            plot = null;
+        };
         plot.resize = function () {
         	var width = placeholder.width(),
         		height = placeholder.height();
@@ -709,15 +726,15 @@ Licensed under the MIT license.
             // since the rest of the code assumes that they exist.
 
             var i, axisOptions, axisCount,
+                fontSize = placeholder.css("font-size"),
+                fontSizeDefault = fontSize ? +fontSize.replace("px", "") : 13,
                 fontDefaults = {
                     style: placeholder.css("font-style"),
-                    size: Math.round(0.8 * (+placeholder.css("font-size").replace("px", "") || 13)),
+                    size: Math.round(0.8 * fontSizeDefault),
                     variant: placeholder.css("font-variant"),
                     weight: placeholder.css("font-weight"),
                     family: placeholder.css("font-family")
                 };
-
-            fontDefaults.lineHeight = fontDefaults.size * 1.15;
 
             axisCount = options.xaxes.length || 1;
             for (i = 0; i < axisCount; ++i) {
@@ -734,6 +751,9 @@ Licensed under the MIT license.
                     axisOptions.font = $.extend({}, fontDefaults, axisOptions.font);
                     if (!axisOptions.font.color) {
                         axisOptions.font.color = axisOptions.color;
+                    }
+                    if (!axisOptions.font.lineHeight) {
+                        axisOptions.font.lineHeight = Math.round(axisOptions.font.size * 1.15);
                     }
                 }
             }
@@ -753,6 +773,9 @@ Licensed under the MIT license.
                     axisOptions.font = $.extend({}, fontDefaults, axisOptions.font);
                     if (!axisOptions.font.color) {
                         axisOptions.font.color = axisOptions.color;
+                    }
+                    if (!axisOptions.font.lineHeight) {
+                        axisOptions.font.lineHeight = Math.round(axisOptions.font.size * 1.15);
                     }
                 }
             }
@@ -1105,7 +1128,7 @@ Licensed under the MIT license.
                             if (val != null) {
                                 f = format[m];
                                 // extract min/max info
-                                if (f.autoscale) {
+                                if (f.autoscale !== false) {
                                     if (f.x) {
                                         updateAxis(s.xaxis, val, val);
                                     }
@@ -1192,11 +1215,8 @@ Licensed under the MIT license.
                         case "right":
                             delta = -s.bars.barWidth;
                             break;
-                        case "center":
-                            delta = -s.bars.barWidth / 2;
-                            break;
                         default:
-                            throw new Error("Invalid bar alignment: " + s.bars.align);
+                            delta = -s.bars.barWidth / 2;
                     }
 
                     if (s.bars.horizontal) {
@@ -1227,7 +1247,9 @@ Licensed under the MIT license.
             // from a previous plot in this container that we'll try to re-use.
 
             placeholder.css("padding", 0) // padding messes up the positioning
-                .children(":not(.flot-base,.flot-overlay)").remove();
+                .children().filter(function(){
+                    return !$(this).hasClass("flot-overlay") && !$(this).hasClass('flot-base');
+                }).remove();
 
             if (placeholder.css("position") == 'static')
                 placeholder.css("position", "relative"); // for positioning labels and overlay
@@ -1324,7 +1346,7 @@ Licensed under the MIT license.
                 ticks = axis.ticks || [],
                 labelWidth = opts.labelWidth || 0,
                 labelHeight = opts.labelHeight || 0,
-                maxWidth = labelWidth || axis.direction == "x" ? Math.floor(surface.width / (ticks.length || 1)) : null;
+                maxWidth = labelWidth || (axis.direction == "x" ? Math.floor(surface.width / (ticks.length || 1)) : null),
                 legacyStyles = axis.direction + "Axis " + axis.direction + axis.n + "Axis",
                 layer = "flot-" + axis.direction + "-axis flot-" + axis.direction + axis.n + "-axis " + legacyStyles,
                 font = opts.font || "flot-tick-label tickLabel";
@@ -1356,37 +1378,50 @@ Licensed under the MIT license.
             var lw = axis.labelWidth,
                 lh = axis.labelHeight,
                 pos = axis.options.position,
+                isXAxis = axis.direction === "x",
                 tickLength = axis.options.tickLength,
                 axisMargin = options.grid.axisMargin,
                 padding = options.grid.labelMargin,
-                all = axis.direction == "x" ? xaxes : yaxes,
-                index, innermost;
+                innermost = true,
+                outermost = true,
+                first = true,
+                found = false;
 
-            // determine axis margin
-            var samePosition = $.grep(all, function (a) {
-                return a && a.options.position == pos && a.reserveSpace;
+            // Determine the axis's position in its direction and on its side
+
+            $.each(isXAxis ? xaxes : yaxes, function(i, a) {
+                if (a && a.reserveSpace) {
+                    if (a === axis) {
+                        found = true;
+                    } else if (a.options.position === pos) {
+                        if (found) {
+                            outermost = false;
+                        } else {
+                            innermost = false;
+                        }
+                    }
+                    if (!found) {
+                        first = false;
+                    }
+                }
             });
-            if ($.inArray(axis, samePosition) == samePosition.length - 1)
-                axisMargin = 0; // outermost
 
-            // determine tick length - if we're innermost, we can use "full"
+            // The outermost axis on each side has no margin
+
+            if (outermost) {
+                axisMargin = 0;
+            }
+
+            // The ticks for the first axis in each direction stretch across
+
             if (tickLength == null) {
-                var sameDirection = $.grep(all, function (a) {
-                    return a && a.reserveSpace;
-                });
-
-                innermost = $.inArray(axis, sameDirection) == 0;
-                if (innermost)
-                    tickLength = "full";
-                else
-                    tickLength = 5;
+                tickLength = first ? "full" : 5;
             }
 
             if (!isNaN(+tickLength))
                 padding += +tickLength;
 
-            // compute box
-            if (axis.direction == "x") {
+            if (isXAxis) {
                 lh += padding;
 
                 if (pos == "bottom") {
@@ -1436,7 +1471,7 @@ Licensed under the MIT license.
             // inside the canvas and isn't clipped off
 
             var minMargin = options.grid.minBorderMargin,
-                margins = { x: 0, y: 0 }, i, axis;
+                axis, i;
 
             // check stuff from the plot (FIXME: this should just read
             // a value from the series, otherwise it's impossible to
@@ -1447,21 +1482,37 @@ Licensed under the MIT license.
                     minMargin = Math.max(minMargin, 2 * (series[i].points.radius + series[i].points.lineWidth/2));
             }
 
-            margins.x = margins.y = Math.ceil(minMargin);
+            var margins = {
+                left: minMargin,
+                right: minMargin,
+                top: minMargin,
+                bottom: minMargin
+            };
 
             // check axis labels, note we don't check the actual
             // labels but instead use the overall width/height to not
             // jump as much around with replots
             $.each(allAxes(), function (_, axis) {
-                var dir = axis.direction;
-                if (axis.reserveSpace)
-                    margins[dir] = Math.ceil(Math.max(margins[dir], (dir == "x" ? axis.labelWidth : axis.labelHeight) / 2));
+                if (axis.reserveSpace && axis.ticks && axis.ticks.length) {
+                    var lastTick = axis.ticks[axis.ticks.length - 1];
+                    if (axis.direction === "x") {
+                        margins.left = Math.max(margins.left, axis.labelWidth / 2);
+                        if (lastTick.v <= axis.max) {
+                            margins.right = Math.max(margins.right, axis.labelWidth / 2);
+                        }
+                    } else {
+                        margins.bottom = Math.max(margins.bottom, axis.labelHeight / 2);
+                        if (lastTick.v <= axis.max) {
+                            margins.top = Math.max(margins.top, axis.labelHeight / 2);
+                        }
+                    }
+                }
             });
 
-            plotOffset.left = Math.max(margins.x, plotOffset.left);
-            plotOffset.right = Math.max(margins.x, plotOffset.right);
-            plotOffset.top = Math.max(margins.y, plotOffset.top);
-            plotOffset.bottom = Math.max(margins.y, plotOffset.bottom);
+            plotOffset.left = Math.ceil(Math.max(margins.left, plotOffset.left));
+            plotOffset.right = Math.ceil(Math.max(margins.right, plotOffset.right));
+            plotOffset.top = Math.ceil(Math.max(margins.top, plotOffset.top));
+            plotOffset.bottom = Math.ceil(Math.max(margins.bottom, plotOffset.bottom));
         }
 
         function setupGrid() {
@@ -2074,16 +2125,20 @@ Licensed under the MIT license.
         function drawAxisLabels() {
 
             $.each(allAxes(), function (_, axis) {
-                if (!axis.show || axis.ticks.length == 0)
-                    return;
-
                 var box = axis.box,
                     legacyStyles = axis.direction + "Axis " + axis.direction + axis.n + "Axis",
                     layer = "flot-" + axis.direction + "-axis flot-" + axis.direction + axis.n + "-axis " + legacyStyles,
                     font = axis.options.font || "flot-tick-label tickLabel",
                     tick, x, y, halign, valign;
 
+                // Remove text before checking for axis.show and ticks.length;
+                // otherwise plugins, like flot-tickrotor, that draw their own
+                // tick labels will end up with both theirs and the defaults.
+
                 surface.removeText(layer);
+
+                if (!axis.show || axis.ticks.length == 0)
+                    return;
 
                 for (var i = 0; i < axis.ticks.length; ++i) {
 
@@ -2442,7 +2497,7 @@ Licensed under the MIT license.
             ctx.restore();
         }
 
-        function drawBar(x, y, b, barLeft, barRight, offset, fillStyleCallback, axisx, axisy, c, horizontal, lineWidth) {
+        function drawBar(x, y, b, barLeft, barRight, fillStyleCallback, axisx, axisy, c, horizontal, lineWidth) {
             var left, right, bottom, top,
                 drawLeft, drawRight, drawTop, drawBottom,
                 tmp;
@@ -2517,13 +2572,8 @@ Licensed under the MIT license.
 
             // fill the bar
             if (fillStyleCallback) {
-                c.beginPath();
-                c.moveTo(left, bottom);
-                c.lineTo(left, top);
-                c.lineTo(right, top);
-                c.lineTo(right, bottom);
                 c.fillStyle = fillStyleCallback(bottom, top);
-                c.fill();
+                c.fillRect(left, top, right - left, bottom - top)
             }
 
             // draw outline
@@ -2531,35 +2581,35 @@ Licensed under the MIT license.
                 c.beginPath();
 
                 // FIXME: inline moveTo is buggy with excanvas
-                c.moveTo(left, bottom + offset);
+                c.moveTo(left, bottom);
                 if (drawLeft)
-                    c.lineTo(left, top + offset);
+                    c.lineTo(left, top);
                 else
-                    c.moveTo(left, top + offset);
+                    c.moveTo(left, top);
                 if (drawTop)
-                    c.lineTo(right, top + offset);
+                    c.lineTo(right, top);
                 else
-                    c.moveTo(right, top + offset);
+                    c.moveTo(right, top);
                 if (drawRight)
-                    c.lineTo(right, bottom + offset);
+                    c.lineTo(right, bottom);
                 else
-                    c.moveTo(right, bottom + offset);
+                    c.moveTo(right, bottom);
                 if (drawBottom)
-                    c.lineTo(left, bottom + offset);
+                    c.lineTo(left, bottom);
                 else
-                    c.moveTo(left, bottom + offset);
+                    c.moveTo(left, bottom);
                 c.stroke();
             }
         }
 
         function drawSeriesBars(series) {
-            function plotBars(datapoints, barLeft, barRight, offset, fillStyleCallback, axisx, axisy) {
+            function plotBars(datapoints, barLeft, barRight, fillStyleCallback, axisx, axisy) {
                 var points = datapoints.points, ps = datapoints.pointsize;
 
                 for (var i = 0; i < points.length; i += ps) {
                     if (points[i] == null)
                         continue;
-                    drawBar(points[i], points[i + 1], points[i + 2], barLeft, barRight, offset, fillStyleCallback, axisx, axisy, ctx, series.bars.horizontal, series.bars.lineWidth);
+                    drawBar(points[i], points[i + 1], points[i + 2], barLeft, barRight, fillStyleCallback, axisx, axisy, ctx, series.bars.horizontal, series.bars.lineWidth);
                 }
             }
 
@@ -2579,15 +2629,12 @@ Licensed under the MIT license.
                 case "right":
                     barLeft = -series.bars.barWidth;
                     break;
-                case "center":
-                    barLeft = -series.bars.barWidth / 2;
-                    break;
                 default:
-                    throw new Error("Invalid bar alignment: " + series.bars.align);
+                    barLeft = -series.bars.barWidth / 2;
             }
 
             var fillStyleCallback = series.bars.fill ? function (bottom, top) { return getFillStyle(series.bars, series.color, bottom, top); } : null;
-            plotBars(series.datapoints, barLeft, barLeft + series.bars.barWidth, 0, fillStyleCallback, series.xaxis, series.yaxis);
+            plotBars(series.datapoints, barLeft, barLeft + series.bars.barWidth, fillStyleCallback, series.xaxis, series.yaxis);
             ctx.restore();
         }
 
@@ -2607,10 +2654,15 @@ Licensed under the MIT license.
 
         function insertLegend() {
 
-            placeholder.find(".legend").remove();
+            if (options.legend.container != null) {
+                $(options.legend.container).html("");
+            } else {
+                placeholder.find(".legend").remove();
+            }
 
-            if (!options.legend.show)
+            if (!options.legend.show) {
                 return;
+            }
 
             var fragments = [], entries = [], rowStarted = false,
                 lf = options.legend.labelFormatter, s, label;
@@ -2771,8 +2823,21 @@ Licensed under the MIT license.
                 }
 
                 if (s.bars.show && !item) { // no other point can be nearby
-                    var barLeft = s.bars.align == "left" ? 0 : -s.bars.barWidth/2,
-                        barRight = barLeft + s.bars.barWidth;
+
+                    var barLeft, barRight;
+
+                    switch (s.bars.align) {
+                        case "left":
+                            barLeft = 0;
+                            break;
+                        case "right":
+                            barLeft = -s.bars.barWidth;
+                            break;
+                        default:
+                            barLeft = -s.bars.barWidth / 2;
+                    }
+
+                    barRight = barLeft + s.bars.barWidth;
 
                     for (j = 0; j < points.length; j += ps) {
                         var x = points[j], y = points[j + 1], b = points[j + 2];
@@ -2970,13 +3035,24 @@ Licensed under the MIT license.
         function drawBarHighlight(series, point) {
             var highlightColor = (typeof series.highlightColor === "string") ? series.highlightColor : $.color.parse(series.color).scale('a', 0.5).toString(),
                 fillStyle = highlightColor,
-                barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
+                barLeft;
+
+            switch (series.bars.align) {
+                case "left":
+                    barLeft = 0;
+                    break;
+                case "right":
+                    barLeft = -series.bars.barWidth;
+                    break;
+                default:
+                    barLeft = -series.bars.barWidth / 2;
+            }
 
             octx.lineWidth = series.bars.lineWidth;
             octx.strokeStyle = highlightColor;
 
             drawBar(point[0], point[1], point[2] || 0, barLeft, barLeft + series.bars.barWidth,
-                    0, function () { return fillStyle; }, series.xaxis, series.yaxis, octx, series.bars.horizontal, series.bars.lineWidth);
+                    function () { return fillStyle; }, series.xaxis, series.yaxis, octx, series.bars.horizontal, series.bars.lineWidth);
         }
 
         function getColorOrGradient(spec, bottom, top, defaultColor) {
@@ -3015,7 +3091,7 @@ Licensed under the MIT license.
         return plot;
     };
 
-    $.plot.version = "0.8.1";
+    $.plot.version = "0.8.2";
 
     $.plot.plugins = [];
 
