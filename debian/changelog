@@ -1,3 +1,11 @@
+flot (0.8.2+dfsg-1) unstable; urgency=low
+
+  * New Upstream Release
+    + Updating debian/jquery.flot.js
+  * README.Source: Added section about inline dependencies
+
+ -- Marcelo Jorge Vieira (metal) <metal@debian.org>  Sun, 09 Feb 2014 16:10:08 -0200
+
 flot (0.8.1+dfsg-2) unstable; urgency=low
 
   * Added compatibility symlink from /usr/share/javascript/flot
