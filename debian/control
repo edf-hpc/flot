@@ -7,8 +7,8 @@ Build-Depends: debhelper (>= 7.0.50~), node-uglify, libjs-jquery-mousewheel,
  libjs-jquery-event-drag, libjs-jquery-resize
 Standards-Version: 3.9.6
 Homepage: http://code.google.com/p/flot/
-Vcs-Browser: http://git.debian.org/?p=pkg-javascript/flot.git
-Vcs-Git: git://git.debian.org/git/pkg-javascript/flot.git
+Vcs-Browser: http://anonscm.debian.org/cgit/pkg-javascript/flot.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/flot.git
 
 Package: libjs-jquery-flot
 Architecture: all
