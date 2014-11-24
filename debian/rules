@@ -19,6 +19,7 @@ override_dh_auto_build:
 	done
 
 override_dh_auto_clean:
+	dh_auto_clean
 	rm -f *.min.js
 	rm -f jquery.flot.navigate.js
 	rm -f jquery.flot.resize.js
