@@ -1,3 +1,13 @@
+flot (0.8.3+dfsg-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated Standards-Version to 3.9.6 (no changes)
+  * Use canonical Vcs-fields
+  * Fixed dh_auto_clean
+  * Installing flot.jquery.json
+
+ -- Marcelo Jorge Vieira <metal@debian.org>  Mon, 24 Nov 2014 06:27:07 -0200
+
 flot (0.8.2+dfsg-1) unstable; urgency=low
 
   * New Upstream Release
