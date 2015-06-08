@@ -1,3 +1,10 @@
+flot (0.8.3+dfsg-1~deb7u1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Backport to Calibre7 (remove use of uglifyjs)
+
+ -- Mehdi Dogguy <mehdi.dogguy@edf.fr>  Mon, 08 Jun 2015 15:13:12 +0200
+
 flot (0.8.3+dfsg-1) unstable; urgency=low
 
   * New upstream release

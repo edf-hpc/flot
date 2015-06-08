@@ -15,7 +15,7 @@ override_dh_auto_build:
 	cat jquery.colorhelpers.js > jquery.flot.js
 	cat debian/jquery.flot.js >> jquery.flot.js
 	for file in `ls *.js`; do \
-		uglifyjs -o $${file%.js}.min.js $$file; \
+		cp $$file $${file%.js}.min.js; \
 	done
 
 override_dh_auto_clean:
